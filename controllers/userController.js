@@ -37,4 +37,32 @@ const registerController = async (req, res) => {
     }
 };
 
-module.exports = { registerController };
+// Login callback
+const loginController = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = await userModel.findOne({ email });
+        
+        if (!user) {
+            return res.status(404).send('User Not Found');
+        }
+
+        // Compare the hashed password
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).send('Invalid Credentials');
+        }
+
+        res.status(200).json({
+            success: true,
+            user,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message,
+        });
+    }
+};
+
+module.exports = { loginController, registerController };
