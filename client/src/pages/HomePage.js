@@ -136,9 +136,9 @@ const HomePage = () => {
                 <div>
                     <h6>Select Type</h6>
                     <Select value={type} onChange={(value) => setType(value)}>
-                        <Select.Option value="all">All</Select.Option>
-                        <Select.Option value="Income">Income</Select.Option>
-                        <Select.Option value="Expense">Expense</Select.Option>
+                        <Select.Option value="all"> All </Select.Option>
+                        <Select.Option value="Income"> Income </Select.Option>
+                        <Select.Option value="Expense"> Expense </Select.Option>
                     </Select>
                 </div>
                 <div className="switched-icons">

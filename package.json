@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
-  "author": "Samyak Patni",
+  "author": "Shashi Chaubey",
   "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.8.1",
